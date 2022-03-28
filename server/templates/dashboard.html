@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Client List{% endblock %}
+{% block content %}
+<table id="data" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Local Port</th>
+            <th>Remote Port</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for routeEntry in routeEntries %}
+        <tr>
+            <td>{{ routeEntry.name }}</td>
+            <td>{{ routeEntry.localPort }}</td>
+            <td>{{ routeEntry.remotePort }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
